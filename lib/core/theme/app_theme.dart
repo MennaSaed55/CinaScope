@@ -1,101 +1,46 @@
+import 'package:CineScope/core/utils/app_colors.dart';
+import 'package:CineScope/core/utils/app_typography.dart';
 import 'package:flutter/material.dart';
-import '../utils/app_colors.dart';
 
-class AppTheme {
-  AppTheme._();
 
-  static ThemeData darkTheme = ThemeData(
-    useMaterial3: true,
-    brightness: Brightness.dark,
-
-    scaffoldBackgroundColor: AppColors.background,
-
-    colorScheme: const ColorScheme.dark(
-      primary: AppColors.primary,
-      onPrimary: AppColors.black,
-
-      secondary: AppColors.secondary,
-      onSecondary: AppColors.white,
-
-      tertiary: AppColors.tertiary,
-      onTertiary: AppColors.black,
-
-      surface: AppColors.surface,
-      onSurface: AppColors.textPrimary,
-
-      surfaceContainerHighest: AppColors.surfaceVariant,
-
-      error: AppColors.error,
-      onError: AppColors.white,
-    ),
-
-    appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.background,
-      foregroundColor: AppColors.textPrimary,
-      elevation: 0,
-      centerTitle: false,
-    ),
-
-    cardTheme: const CardThemeData(
-      color: AppColors.surface,
-      elevation: 0,
-      margin: EdgeInsets.zero,
-    ),
-
-    dividerTheme: const DividerThemeData(
-      color: AppColors.divider,
-      thickness: 1,
-    ),
-
-    inputDecorationTheme: InputDecorationTheme(
-      filled: true,
-      fillColor: AppColors.surface,
-      hintStyle: const TextStyle(
-        color: AppColors.textMuted,
-      ),
-      labelStyle: const TextStyle(
-        color: AppColors.textSecondary,
-      ),
-      prefixIconColor: AppColors.textSecondary,
-
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(
-          color: AppColors.border,
+abstract class AppTheme {
+  static ThemeData get darkTheme {
+    return ThemeData(
+      useMaterial3: true,
+      brightness: Brightness.dark,
+      scaffoldBackgroundColor: AppColors.background,
+      colorScheme: AppColors.darkColorScheme,
+      textTheme: AppTypography.textTheme,
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.primary,
+          foregroundColor: Colors.white,
+          textStyle: AppTypography.labelLarge,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
         ),
       ),
-
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(
-          color: AppColors.border,
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          foregroundColor: AppColors.textPrimary,
+          side: const BorderSide(color: AppColors.surfaceVariant),
+          textStyle: AppTypography.labelLarge,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
         ),
       ),
-
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(
-          color: AppColors.primary,
-          width: 2,
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        fillColor: AppColors.surfaceVariant,
+        hintStyle: AppTypography.bodyMedium,
+        prefixIconColor: AppColors.textSecondary,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide.none,
         ),
       ),
-    ),
-
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primary,
-        foregroundColor: AppColors.black,
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-      ),
-    ),
-
-    textButtonTheme: TextButtonThemeData(
-      style: TextButton.styleFrom(
-        foregroundColor: AppColors.primary,
-      ),
-    ),
-  );
+    );
+  }
 }

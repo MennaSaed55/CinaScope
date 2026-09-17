@@ -22,6 +22,10 @@ dependencies:
   firebase_core: ^3.12.0
   firebase_auth: ^5.5.1
   google_sign_in: ^6.2.2
+  shared_preferences: ^2.5.5
+  google_fonts: ^8.2.1
+  envied: ^0.5.4+1
+
 
 
 dev_dependencies:
@@ -30,6 +34,8 @@ dev_dependencies:
 
 
   flutter_lints: ^6.0.0
+  build_runner: ^2.4.0
+  envied_generator: ^0.5.0
 
 
 
@@ -44,10 +50,10 @@ flutter:
     - assets/images/
 
 flutter_native_splash:
-  color: "#ffffff"
+  color: "#0B0B12"
   image: "assets/icons/icon_logo.png"
   android_12:
-    color: "#ffffff"
+    color: "#0B0B12"
     image: "assets/icons/icon_logo.png"
 flutter_launcher_icons:
   android: true

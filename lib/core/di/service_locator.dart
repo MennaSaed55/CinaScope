@@ -18,28 +18,28 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance);
   getIt.registerLazySingleton<GoogleSignIn>(() => GoogleSignIn());
 
-  getIt.registerLazySingleton<AuthService>(
-        () => AuthServiceImpl(
-      auth: getIt<FirebaseAuth>(),
-      googleSignIn: getIt<GoogleSignIn>(),
-    ),
-  );
-
-  getIt.registerLazySingleton<RegisterRepo>(
-        () => RegisterRepoImpl(
-      authService: getIt<AuthService>(),
-    ),
-  );
-
-  getIt.registerLazySingleton<LoginRepo>(
-        () => LoginRepoImpl(
-      authService: getIt<AuthService>(),
-    ),
-  );
-
-  getIt.registerLazySingleton<SocialAndAnonAuthRepo>(
-        () => SocialAndAnonAuthRepoImpl(
-      authService: getIt<AuthService>(),
-    ),
-  );
+  // getIt.registerLazySingleton<AuthService>(
+  //       () => AuthServiceImpl(
+  //     auth: getIt<FirebaseAuth>(),
+  //     googleSignIn: getIt<GoogleSignIn>(),
+  //   ),
+  // );
+  //
+  // getIt.registerLazySingleton<RegisterRepo>(
+  //       () => RegisterRepoImpl(
+  //     authService: getIt<AuthService>(),
+  //   ),
+  // );
+  //
+  // getIt.registerLazySingleton<LoginRepo>(
+  //       () => LoginRepoImpl(
+  //     authService: getIt<AuthService>(),
+  //   ),
+  // );
+  //
+  // getIt.registerLazySingleton<SocialAndAnonAuthRepo>(
+  //       () => SocialAndAnonAuthRepoImpl(
+  //     authService: getIt<AuthService>(),
+  //   ),
+  // );
 }
